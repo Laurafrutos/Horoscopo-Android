@@ -50,4 +50,8 @@
     <!-- Pisces -->
     <string name="horoscope_name_pisces">Pisces</string>
     <string name="horoscope_date_pisces">February 19 - March 20</string>
+
+    <string name="menu_search">buscar</string>
+    <string name="menu_favorite">Favorito</string>
+    <string name="menu_share">compartir</string>
 </resources>
