@@ -1,8 +1,7 @@
-package com.laura.horoscopo
+package com.laura.horoscopo.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +11,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.laura.horoscopo.data.Horoscope
+import com.laura.horoscopo.adapters.HoroscopeAdapter
+import com.laura.horoscopo.R
+import com.laura.horoscopo.utils.search
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,15 +35,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+//        supportActionBar?.title = "Zodiac"
 
         recyclerView = findViewById(R.id.recyclerView)
 
-        adapter = HoroscopeAdapter(horoscopeList,{ position ->
+        adapter = HoroscopeAdapter(horoscopeList, { position ->
 
             val horoscope = horoscopeList[position]
-            Toast.makeText(this,horoscope.id, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, horoscope.id, Toast.LENGTH_SHORT).show()
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("HoroscopE_ID", horoscope.id)
+            intent.putExtra("HOROSCOPE_ID", horoscope.id)
 
             startActivity(intent)
         })

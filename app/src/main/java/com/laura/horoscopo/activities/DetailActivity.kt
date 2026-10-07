@@ -1,14 +1,15 @@
-package com.laura.horoscopo
+package com.laura.horoscopo.activities
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.laura.horoscopo.data.Horoscope
+import com.laura.horoscopo.R
 
 class DetailActivity : AppCompatActivity() {
 

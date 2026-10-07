@@ -1,4 +1,4 @@
-package com.laura.horoscopo
+package com.laura.horoscopo.utils
 
 
 import java.text.Normalizer
