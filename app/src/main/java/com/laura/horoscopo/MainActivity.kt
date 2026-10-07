@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    val horoscopeList: List<Horoscope> = Horoscope.getAll()
+    var horoscopeList: List<Horoscope> = Horoscope.getAll()
 
     lateinit var adapter: HoroscopeAdapter
 
@@ -58,13 +58,15 @@ class MainActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                Log.i("SEARCH", "Buscando... $query")
-
                 return false
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                Log.i("SEARCH", newText)
+                horoscopeList = Horoscope.getAll().filter {
+                    getString(it.name).search(newText) ||
+                            getString(it.dates).search(newText)
+                }
+                adapter.updateData(horoscopeList)
                 return true
             }
         })
@@ -72,4 +74,3 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 }
-

@@ -24,8 +24,8 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
-        // 1. Evitamos que explote si HOROSCOPE_ID llega vacío usando ?: "aries"
-        val id = intent.getStringExtra("HOROSCOPE_ID") ?: "aries"
+
+        val id = intent.getStringExtra("HOROSCOPE_ID") !!
 
 
         val horoscope = Horoscope.getById(id)

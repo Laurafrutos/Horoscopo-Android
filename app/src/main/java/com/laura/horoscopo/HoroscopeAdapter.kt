@@ -8,34 +8,44 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class HoroscopeAdapter
-    (val items: List<Horoscope>,
-     val onitemclick:(position : Int) -> Unit) :
+    (
+    var items: List<Horoscope>,
+    val onItemClick:(position : Int) -> Unit) :
     RecyclerView.Adapter<HoroscopeViewHolder>() {
-
 
 
     //cual es la vista de cada elemento
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoroscopeViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_horoscope, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_horoscope, parent, false)
         return HoroscopeViewHolder(view)
 
     }
 
     //cuales son los datos del elemento que esta en tal posiciom
-    override fun onBindViewHolder(holder: HoroscopeViewHolder, position: Int
+    override fun onBindViewHolder(
+        holder: HoroscopeViewHolder, position: Int
     ) {
         val horoscope = items[position]
         holder.render(horoscope)
         holder.itemView.setOnClickListener {
-            this.onitemclick(position)
+            onItemClick(position)
 
 
         }
 
     }
-//cuantas elementos tiene que mostrar
+
+    //cuantas elementos tiene que mostrar
     override fun getItemCount(): Int {
-       return items.size
+        return items.size
+    }
+//}
+
+
+    fun updateData(dataSet: List<Horoscope>) {
+        items = dataSet
+        notifyDataSetChanged()
     }
 }
 
