@@ -49,4 +49,14 @@
     <!-- Pisces -->
     <string name="horoscope_name_pisces">Piscis</string>
     <string name="horoscope_date_pisces">19 de febrero - 20 de marzo</string>
+
+    <string name="search_menu">Buscar</string>
+    <string name="favorite_menu">Favorito</string>
+    <string name="share_menu">Compartir</string>
+
+    <string name="menu_daily">Hoy</string>
+    <string name="menu_weekly">Semanal</string>
+    <string name="menu_monthly">Mensual</string>
+
+
 </resources>

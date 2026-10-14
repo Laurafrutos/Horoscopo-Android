@@ -5,15 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#120924"
     tools:context=".activities.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+
+        android:paddingTop="12dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="match_parent"
-
-        />
-
+        android:paddingBottom="32dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_horoscope"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

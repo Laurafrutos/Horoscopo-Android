@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@drawable/bg_gradient">
 
-<!--    <TextView-->
-<!--    android:id="@+id/textViewTitle"-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:layout_marginTop="32dp"-->
-<!--    android:layout_marginBottom="24dp"-->
-<!--    android:text="ARIES"-->
-<!--    android:textColor="#1E1E2E"-->
-<!--    android:textSize="32sp"-->
-<!--    android:textStyle="bold"-->
-<!--        android:letterSpacing="0.05" />-->
+    <ImageView
+        android:id="@+id/signimageview"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="48dp"
+        android:padding="16dp"
+        android:background="@drawable/bg_image_card"
+        android:elevation="8dp"
+        android:src="@drawable/aries_icon" />
 
-    <!-- CORRECCIÓN: Etiqueta correctamente cerrada e ID añadido para que Kotlin la encuentre -->
-<!--    <ImageView-->
-<!--        android:id="@+id/imageViewHoroscope"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="120dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:src="@drawable/aries_icon" />-->
+    <TextView
+        android:id="@+id/nametextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Horoscope Name"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05" />
 
-<!--    &lt;!&ndash; CORRECCIÓN: Añadido el ID al TextView para que puedas cambiar el texto dinámicamente &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:id="@+id/textViewDescription"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="este es el texto de aries"-->
-<!--        android:textColor="#1E1E2E"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textStyle="bold" />-->
+    <TextView
+        android:id="@+id/datestextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/bg_date_chip"
+        android:text="March 21 - April 19"
+        android:textColor="#E9D5FF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/predictionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Prediction..."
+            android:textSize="18sp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"/>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/activity_detail_menu" />
+
 
 </LinearLayout>

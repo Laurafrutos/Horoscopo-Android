@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+        <color name="purple_dark">#120924</color>
+        <color name="purple_medium">#2A164D</color>
+        <color name="purple_card">#3B1E6D</color>
+        <color name="purple_chip">#581C87</color>
+        <color name="purple_light">#E9D5FF</color>
+
 </resources>

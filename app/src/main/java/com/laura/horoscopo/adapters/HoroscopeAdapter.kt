@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.laura.horoscopo.R
 import com.laura.horoscopo.data.Horoscope
+import com.laura.horoscopo.utils.SessionManager
 
 class HoroscopeAdapter
     (
@@ -56,12 +58,14 @@ class HoroscopeViewHolder(view: View) : RecyclerView.ViewHolder(view){
     val signImageView: ImageView = view.findViewById(R.id.signimageview)
     val nameTextView: TextView = view.findViewById(R.id.nametextview)
     val dateTextView: TextView = view.findViewById(R.id.datetextview)
+    val favoriteImageView: ImageView = view.findViewById(R.id.favoriteImageView)
 
 
     fun render(horoscope: Horoscope){
         nameTextView.setText(horoscope.name)
         dateTextView.setText(horoscope.dates)
         signImageView.setImageResource(horoscope.sign)
+        favoriteImageView.isVisible = SessionManager(itemView.context).isFavorite(horoscope.id)
     }
 }
 

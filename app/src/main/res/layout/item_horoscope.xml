@@ -3,40 +3,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingHorizontal="8dp"
-    android:paddingVertical="4dp">
+    android:gravity="center_vertical"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    android:padding="12dp"
+    android:background="@drawable/bg_list_item"
+    android:elevation="4dp">
 
+    <!-- Icono del signo dentro de una cajita morada -->
     <ImageView
         android:id="@+id/signimageview"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_icon_container"
         android:src="@drawable/aries_icon" />
 
+    <!-- Textos centrales -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/nametextview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="horoscope name"
-            android:textSize="24sp"
-            android:textStyle="bold"
-
-            />
-
+            android:text="Aries"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/datetextview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="horoscope date" />
-
+            android:layout_marginTop="2dp"
+            android:text="21 Mar - 19 Apr"
+            android:textColor="#C084FC"
+            android:textSize="13sp" />
     </LinearLayout>
 
+    <!-- Icono de Favorito alineado a la derecha -->
+    <ImageView
+        android:id="@+id/favoriteImageView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_favorite_selected"
+        android:tint="#F472B6" />
 
 </LinearLayout>
